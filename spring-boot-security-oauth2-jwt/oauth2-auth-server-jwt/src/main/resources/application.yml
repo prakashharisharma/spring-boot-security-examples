@@ -1,0 +1,49 @@
+server:
+  port: 8081 
+  context-path: /uaa
+  
+#  session:
+#    cookie:
+#      name: UAASESSION
+      
+#security:
+#  basic:
+#    enabled: false
+
+#
+# IMPORTANT NOTICE: 
+# You have to replace this keypair and make sure the private key remains private!
+#
+
+config:
+    oauth2:
+        # openssl genrsa -out jwt.pem 2048
+        # openssl rsa -in jwt.pem
+        privateKey: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIICXAIBAAKBgQCbyJZ/lqlsnmKtgZrP5DYk2dhZqZYUj4UuXAkrM4UhMbw3ccOK
+            dDyzTsuTVeAQJJRe8/Y4ohSahi9l4VDwSFvDAf8B8Pvh588scT2qlZM+mFUSuYmy
+            P5bg/5477KopK6UR7AZGKv/7BvjPto22mJPHkxKNfxaMZj4fs5Hp+CGPLQIDAQAB
+            AoGAJWhIQ0DxVATAWzuI6iy5l6W73uPrBurjpxswlHAdorfno0StGL0Kql/cYHe5
+            gwbVnetlD3pUCjr4fLVbEye86LnAly4CXmK11re1ywgda4cDggIWhFbazCWZEbTn
+            Nq/vRHm1c6cy8LLyP7T815rSYAwU5pj5i57HP7mk4PpCov0CQQDP8Du2Ubp/8CBZ
+            IL6Ocx0uCNrurq1h3CRipBz0DHgpIltNBBTSUULRnfWUmHS5BUG7Dv4C2YG15iwx
+            zE+FNXwfAkEAv8pWqFjHKqMcd259q9uquKQT6cFLFiBTnfMWqLIQnGJ295obquu5
+            VSy9Wg4rWTA5DeRyOOfGT8x3Y3CMGUuLMwJAZJd6y4BOEIZBn9xPUuotO4/dGYo3
+            JhgxIebyer1tg7izIlbPG89j27PmkbQPA1KfsbZW+1ntfemTh6Om9HIjUQJAKDiW
+            09dKbXankaRqVpBKzU4bnvoadRlyb717EwXE1gcQS/zVsJKe2232h9xQ2vNyA6fV
+            DHoO7M1EfGYt+2AMYQJBAIyYtiX9JGnQNtwphs3h5M5RpmbPiQ6n4SBdLLVhwHng
+            qK+xWmXwhmyFDqWo2u1M1mbkjZFk2ipip5Smq3b8n3c=
+            -----END RSA PRIVATE KEY-----
+        # openssl rsa -in jwt.pem -pubout
+        publicKey: |
+            -----BEGIN PUBLIC KEY-----
+            MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCbyJZ/lqlsnmKtgZrP5DYk2dhZ
+            qZYUj4UuXAkrM4UhMbw3ccOKdDyzTsuTVeAQJJRe8/Y4ohSahi9l4VDwSFvDAf8B
+            8Pvh588scT2qlZM+mFUSuYmyP5bg/5477KopK6UR7AZGKv/7BvjPto22mJPHkxKN
+            fxaMZj4fs5Hp+CGPLQIDAQAB
+            -----END PUBLIC KEY-----
+            
+logging:
+  level:
+    org.springframework.security: DEBUG 

@@ -1,0 +1,28 @@
+server:
+    port: 8080
+    context-path: /ui
+
+    session:
+      cookie:
+        name: UISESSION  
+
+security:
+    basic:
+        enabled: false
+        
+    oauth2:
+        client:
+            client-id: 649a60cf1517547e7249
+            client-secret: ba7875039e0bbcc089f55c5285c3445b120f8038
+            access-token-uri: https://github.com/login/oauth/access_token
+            user-authorization-uri: https://github.com/login/oauth/authorize
+            client-authentication-scheme: form
+            auto-approve-scopes: '.*'
+            #scope: read, write
+        resource:
+            user-info-uri: https://api.github.com/user
+            preferTokenInfo: false
+ 
+logging:
+  level:
+    org.springframework.security: DEBUG
